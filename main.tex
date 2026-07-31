@@ -1,0 +1,168 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{tabularx}
+\usepackage[inline]{asymptote}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,patterns,positioning}
+
+\usepackage{booktabs}
+\usepackage{array}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{ulem}
+\usepackage{enumitem}
+\usepackage{nolbreaks}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{subcaption}
+\usepackage{needspace}
+
+\usepackage[
+    a4paper,
+    left=10mm,
+    right=10mm,
+    top=22mm,
+    bottom=18mm,
+    headheight=18pt,
+    headsep=9mm,
+    footskip=10mm
+]{geometry}
+
+\usepackage[
+    a4paper,
+    left=10mm,
+    right=10mm,
+    top=22mm,
+    bottom=18mm,
+    headheight=18pt,
+    headsep=9mm,
+    footskip=10mm
+]{geometry}
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\Huge}
+  {\chaptertitlename\ \thechapter}
+  {0.6em}
+  {\Large}
+
+\titlespacing*{\chapter}
+  {0pt}
+  {-12mm}
+  {8mm}
+
+\usepackage[unicode]{hyperref}
+
+
+\setlist{nolistsep, itemsep=0.3cm, parsep=0pt}
+\setlength{\parskip}{0.3cm}
+\renewcommand{\baselinestretch}{1.22}
+
+\sloppy
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdfencoding=auto,
+    psdextra
+}
+
+% Колонтитулы
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{\Large \it ЭлМШ $\times$ ЭТЛ}
+\fancyhead[C]{\Large \it 7 класс}
+\fancyhead[R]{\Large \it 31.07.2026}
+
+
+
+\renewcommand{\headrulewidth}{0.1mm}
+\renewcommand{\footrulewidth}{0mm}
+
+\fancypagestyle{firststyle}{
+    \fancyhf{}
+
+    \fancyhead[L]{\Large \it ЭлМШ $\times$ ЭТЛ}
+    \fancyhead[C]{\Large \it 7 класс}
+    \fancyhead[R]{\Large \it 31.07.2026}
+
+
+    \renewcommand{\headrulewidth}{0.1mm}
+    \renewcommand{\footrulewidth}{0mm}
+}
+
+\raggedbottom
+
+\newcommand{\problem}[2]{\noindent\llap{#1.\space}#2}
+\newcommand{\legendre}[2]{\left(\dfrac{#1}{#2}\right)}
+
+% --- Красивый блок задачи с плашкой-заголовком ---
+\newtcolorbox{taskbox}[3]{
+    enhanced,
+    breakable,
+    colback=#2!6!white,
+    colframe=#2!55!black,
+    boxrule=0.7pt,
+    arc=3mm,
+    left=4mm,
+    right=4mm,
+    top=7mm,
+    bottom=4mm,
+    title={#1},
+    attach boxed title to top left={
+        xshift=6mm,
+        yshift=-3mm
+    },
+    boxed title style={
+        colback=#2!55!black,
+        colframe=#2!55!black,
+        boxrule=0pt,
+        arc=2mm,
+        left=3mm,
+        right=3mm,
+        top=1mm,
+        bottom=1mm
+    },
+    fonttitle=\bfseries\large\color{white},
+    #3
+}
+
+% --- Дополнительные блоки для теории ---
+\newenvironment{defbox}[1]{\begin{taskbox}{Определение: #1}{blue}{}}{\end{taskbox}}
+\newenvironment{examplebox}[1]{\begin{taskbox}{Примеры: #1}{green}{}}{\end{taskbox}}
+\newenvironment{factbox}[1]{\begin{taskbox}{Факт: #1}{purple}{}}{\end{taskbox}}
+\newenvironment{algobox}[1]{\begin{taskbox}{Как проверять: #1}{cyan}{}}{\end{taskbox}}
+\newenvironment{warningbox}[1]{\begin{taskbox}{Важно: #1}{red}{}}{\end{taskbox}}
+
+\newenvironment{remarkbox}
+{
+    \begin{taskbox}{Замечание!}{orange}{}
+}
+{
+    \end{taskbox}
+}
+
+\begin{document}
+
+\thispagestyle{firststyle}
+\large
+
+\input{АА/Сборы2026/4-5/92.ФинальнаяОтветы}
+
+\newpage
+
+\input{АА/Сборы2026/7/92.ФинальнаяОтветы}
+\end{document}

@@ -1,0 +1,582 @@
+% Основные источники:
+% https://sochisirius.ru/uploads/2021/11/math_1021_11a_12_gaussovy_celye_chisla_teoriya.pdf
+% https://sochisirius.ru/uploads/2021/11/math_1021_11a_13_gaussovy_celye_chisla_zadachi.pdf
+% https://sochisirius.ru/uploads/2021/11/math_1021_11b_19-celye_gaussovye_chisla.pdf
+% https://sochisirius.ru/uploads/2021/11/math_1021_11v_14_gaussovy_chisla.pdf
+
+\begin{center}
+    {\LARGE\bfseries Целые гауссовы числа}
+\end{center}
+
+
+\begin{defbox}{гауссовы целые числа и норма}
+\emph{Целыми гауссовыми числами} называются комплексные числа вида
+\[
+    a+bi,\qquad a,b\in\mathbb Z.
+\]
+Множество всех таких чисел обозначается через
+\[
+    \mathbb Z[i]=\{a+bi\mid a,b\in\mathbb Z\}.
+\]
+
+Для $\alpha=a+bi$ положим
+\[
+    \overline{\alpha}=a-bi,
+    \qquad
+    N(\alpha)=\alpha\overline{\alpha}=a^2+b^2.
+\]
+Число $N(\alpha)$ называется \emph{нормой} числа $\alpha$.
+\end{defbox}
+
+\begin{center}
+    {\large\bfseries I. Первые свойства}
+\end{center}
+
+\problem{1}{Докажите следующие свойства.}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=8mm]
+    \item Если $\alpha,\beta\in\mathbb Z[i]$, то
+    \[
+        \alpha+\beta,\quad \alpha-\beta,\quad
+        \alpha\beta,\quad \overline{\alpha}
+        \in\mathbb Z[i].
+    \]
+
+    \item Для любого $\alpha\in\mathbb Z[i]$ число $N(\alpha)$ является
+    целым неотрицательным, причём
+    \[
+        N(\alpha)=0\quad\Longleftrightarrow\quad \alpha=0.
+    \]
+
+    \item Для любых $\alpha,\beta\in\mathbb Z[i]$ выполнено
+    \[
+        N(\alpha\beta)=N(\alpha)N(\beta).
+    \]
+\end{enumerate}
+
+\smallskip
+\textbf{Решение.}
+Пусть $\alpha=a+bi$ и $\beta=c+di$, где $a,b,c,d\in\mathbb Z$.
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=8mm]
+    \item Имеем
+    \[
+    \begin{aligned}
+        \alpha+\beta&=(a+c)+(b+d)i,\\
+        \alpha-\beta&=(a-c)+(b-d)i,\\
+        \alpha\beta&=(ac-bd)+(ad+bc)i,\\
+        \overline\alpha&=a-bi.
+    \end{aligned}
+    \]
+    Все действительные и мнимые части здесь целые, поэтому полученные
+    числа принадлежат $\mathbb Z[i]$.
+
+    \item $N(\alpha)=a^2+b^2$ является целым неотрицательным числом.
+    Равенство $a^2+b^2=0$ возможно ровно тогда, когда $a=b=0$, то есть
+    когда $\alpha=0$.
+
+    \item Сопряжение согласовано с умножением:
+    $\overline{\alpha\beta}=\overline\alpha\,\overline\beta$. Поэтому
+    \[
+        N(\alpha\beta)
+        =\alpha\beta\overline{\alpha\beta}
+        =\alpha\overline\alpha\,\beta\overline\beta
+        =N(\alpha)N(\beta).
+    \]
+\end{enumerate}
+
+\medskip
+
+\begin{defbox}{делимость, обратимые и ассоциированные элементы}
+Для $\alpha,\beta\in\mathbb Z[i]$ говорят, что $\alpha$ делит $\beta$,
+и пишут $\alpha\mid\beta$, если существует $\gamma\in\mathbb Z[i]$,
+для которого
+\[
+    \beta=\alpha\gamma.
+\]
+
+Число $\varepsilon\in\mathbb Z[i]$ называется \emph{обратимым}, если
+$\varepsilon^{-1}\in\mathbb Z[i]$.
+
+Числа $\alpha$ и $\beta$ называются \emph{ассоциированными}, если
+$\alpha=\varepsilon\beta$ для некоторого обратимого
+$\varepsilon\in\mathbb Z[i]$.
+\end{defbox}
+
+\problem{2}{Исследуйте обратимые и ассоциированные элементы.}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=8mm]
+    \item Докажите, что $\varepsilon\in\mathbb Z[i]$ обратимо тогда
+    и только тогда, когда
+    \[
+        N(\varepsilon)=1.
+    \]
+
+    \item Найдите все обратимые элементы кольца $\mathbb Z[i]$.
+
+    \item Опишите геометрически все числа, ассоциированные с
+    $\alpha=a+bi$.
+
+    \item Верно ли, что два гауссовых числа одинаковой нормы обязательно
+    ассоциированы?
+\end{enumerate}
+
+\smallskip
+\textbf{Решение.}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=8mm]
+    \item Если $\varepsilon\eta=1$ для некоторого
+    $\eta\in\mathbb Z[i]$, то
+    \[
+        N(\varepsilon)N(\eta)=N(1)=1.
+    \]
+    Оба множителя являются неотрицательными целыми числами, поэтому
+    $N(\varepsilon)=1$. Обратно, при $N(\varepsilon)=1$ выполнено
+    $\varepsilon\overline\varepsilon=1$, так что
+    $\varepsilon^{-1}=\overline\varepsilon\in\mathbb Z[i]$.
+
+    \item Из $a^2+b^2=1$ получаем
+    \[
+        \varepsilon\in\{1,-1,i,-i\}.
+    \]
+    Все четыре числа действительно обратимы.
+
+    \item Все числа, ассоциированные с $\alpha$, имеют вид
+    \[
+        \alpha,\quad -\alpha,\quad i\alpha,\quad -i\alpha.
+    \]
+    На комплексной плоскости это точки, полученные из $\alpha$
+    поворотами вокруг начала координат на углы
+    $0^\circ,90^\circ,180^\circ,270^\circ$.
+
+\begin{center}
+\begin{asy}
+size(9cm);
+
+pair O=(0,0);
+pair a=(2,1);
+pair ia=(-1,2);
+pair ma=(-2,-1);
+pair mia=(1,-2);
+
+real M=2.7;
+real R=sqrt(5);
+
+// Координатная сетка
+for (int k=-2; k<=2; ++k) {
+    draw((k,-M)--(k,M), lightgray+linewidth(0.35));
+    draw((-M,k)--(M,k), lightgray+linewidth(0.35));
+}
+
+// Координатные оси
+draw((-M,0)--(M,0), black+linewidth(0.9), Arrow(TeXHead));
+draw((0,-M)--(0,M), black+linewidth(0.9), Arrow(TeXHead));
+
+label("$\operatorname{Re} z$", (M,0), SE);
+label("$\operatorname{Im} z$", (0,M), NW);
+label("$0$", O, SW);
+
+// Числовые отметки
+for (int k=-2; k<=2; ++k) {
+    if (k != 0) {
+        label(string(k), (k,0), S);
+        label(string(k), (0,k), W);
+    }
+}
+
+// Окружность равных модулей
+draw(circle(O,R), gray+dashed+linewidth(0.7));
+
+// Квадрат
+draw(
+    a--ia--ma--mia--cycle,
+    black+linewidth(1.2)
+);
+
+// Вершины квадрата
+fill(circle(a,0.055), red);
+fill(circle(ia,0.055), red);
+fill(circle(ma,0.055), red);
+fill(circle(mia,0.055), red);
+
+// Подписи
+label("$\alpha$", a, NE);
+label("$i\alpha$", ia, NW);
+label("$-\alpha$", ma, SW);
+label("$-i\alpha$", mia, SE);
+\end{asy}
+\end{center}
+
+    \item Неверно. Например,
+    \[
+        N(1+2i)=N(2+i)=5,
+    \]
+    но среди чисел
+    \[
+        1+2i,\quad -1-2i,\quad -2+i,\quad 2-i
+    \]
+    число $2+i$ отсутствует. Следовательно, $1+2i$ и $2+i$ не
+    ассоциированы.
+\end{enumerate}
+
+\medskip
+
+\begin{center}
+    {\large\bfseries II. Деление с остатком и алгоритм Евклида}
+\end{center}
+
+\problem{3}{
+Пусть $z=x+yi$ — произвольное комплексное число. Докажите, что
+существует $q=m+ni\in\mathbb Z[i]$, для которого
+\[
+    |z-q|^2\leqslant\frac12.
+\]
+}
+
+\textit{Указание.} Выберите $m$ и $n$ ближайшими целыми числами к
+$x$ и $y$ соответственно.
+
+\smallskip
+\textbf{Решение.}
+Выберем целые $m$ и $n$ так, чтобы
+\[
+    |x-m|\leqslant\frac12,
+    \qquad
+    |y-n|\leqslant\frac12,
+\]
+и положим $q=m+ni$. Тогда
+\[
+    |z-q|^2=(x-m)^2+(y-n)^2
+    \leqslant\frac14+\frac14=\frac12.
+\]
+
+Геометрически мы выбираем ближайший к $z$ узел квадратной решётки
+$\mathbb Z[i]$. Любая точка единичного квадрата находится от его центра
+на расстоянии не больше $\sqrt2/2$.
+
+\begin{center}
+\begin{asy}
+size(8cm);
+
+pair A=(0,0);
+pair B=(1,0);
+pair C=(1,1);
+pair D=(0,1);
+
+pair q=B;
+pair z=(0.76,0.22);
+
+draw(A--B--C--D--cycle, black+linewidth(1));
+draw(z--q, black+dotted+linewidth(1));
+
+fill(circle(z,0.018), red);
+fill(circle(q,0.018), red);
+
+label("$z=x+yi$", z, NW);
+label("$q=m+ni$", q, SE);
+
+label(
+    "$|z-q|\leqslant\dfrac{\sqrt{2}}{2}$",
+    (0.5,-0.20),
+    S
+);
+\end{asy}
+\end{center}
+
+\medskip
+
+\problem{4}{
+Докажите теорему о делении с остатком: для любых
+$\alpha,\beta\in\mathbb Z[i]$, где $\beta\ne0$, существуют
+$q,r\in\mathbb Z[i]$ такие, что
+\[
+    \alpha=\beta q+r,
+    \qquad
+    N(r)<N(\beta).
+\]
+}
+
+\textit{Указание.} Примените предыдущую задачу к комплексному числу
+$\alpha/\beta$.
+
+\smallskip
+\textbf{Решение.}
+По задаче 3 для числа $z=\alpha/\beta$ можно выбрать
+$q\in\mathbb Z[i]$ так, что
+\[
+    \left|\frac{\alpha}{\beta}-q\right|^2\leqslant\frac12.
+\]
+Положим $r=\alpha-\beta q$. Тогда $r\in\mathbb Z[i]$ и
+$\alpha=\beta q+r$. Кроме того,
+\[
+\begin{aligned}
+    N(r)=|r|^2
+    &=|\beta|^2
+      \left|\frac{\alpha}{\beta}-q\right|^2\\
+    &\leqslant\frac12|\beta|^2
+     =\frac12N(\beta)<N(\beta).
+\end{aligned}
+\]
+Это и есть требуемое деление с остатком.
+
+\medskip
+
+\begin{remarkbox}
+В отличие от деления целых чисел, неполное частное и остаток
+в $\mathbb Z[i]$ могут определяться неоднозначно.
+\end{remarkbox}
+
+\begin{defbox}{наибольший общий делитель}
+Гауссово число $d$ называется \emph{наибольшим общим делителем}
+чисел $\alpha$ и $\beta$, если
+\[
+    d\mid\alpha,\qquad d\mid\beta,
+\]
+и каждый общий делитель $\alpha$ и $\beta$ делит $d$.
+
+Наибольший общий делитель определён с точностью до умножения на
+обратимый элемент.
+\end{defbox}
+
+\problem{5}{Исследуйте алгоритм Евклида в $\mathbb Z[i]$.}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=8mm]
+    \item Докажите, что последовательное деление с остатком позволяет
+    найти наибольший общий делитель двух гауссовых чисел.
+
+    \item Найдите
+    \[
+        \text{НОД}(4+7i,\;9+2i).
+    \]
+
+    \item Представьте найденный наибольший общий делитель в виде
+    \[
+        (4+7i)u+(9+2i)v,
+        \qquad u,v\in\mathbb Z[i].
+    \]
+
+    \item Найдите
+    \[
+        \text{НОД}(3+8i,\;7-5i).
+    \]
+\end{enumerate}
+
+\smallskip
+\textbf{Решение.}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=8mm]
+    \item Последовательно делим с остатком:
+    \[
+    \begin{aligned}
+        \alpha&=\beta q_1+r_1,\\
+        \beta&=r_1q_2+r_2,\\
+        r_1&=r_2q_3+r_3,\\
+        &\ \vdots
+    \end{aligned}
+    \qquad
+    N(\beta)>N(r_1)>N(r_2)>\dotsb.
+    \]
+    Нормы являются неотрицательными целыми числами, поэтому процесс
+    заканчивается. Пусть $r_s$~--- последний ненулевой остаток. Из
+    последнего равенства следует, что $r_s$ делит предыдущий остаток;
+    поднимаясь по равенствам вверх, получаем
+    $r_s\mid\alpha$ и $r_s\mid\beta$.
+
+    Наоборот, любой общий делитель $\alpha$ и $\beta$ делит $r_1$,
+    затем $r_2$ и так далее, а значит, делит $r_s$. Следовательно,
+    $r_s$ является наибольшим общим делителем.
+
+    \item Делим $9+2i$ на $4+7i$:
+    \[
+        9+2i=(4+7i)(1-i)+(-2-i).
+    \]
+    Далее деление выполняется без остатка:
+    \[
+        4+7i=(-2-i)(-3-2i).
+    \]
+    Поэтому
+    \[
+        \text{НОД}(4+7i,9+2i)=-2-i
+    \]
+    с точностью до умножения на $\pm1,\pm i$.
+
+    \item Из первого равенства сразу получаем
+    \[
+        -2-i=(4+7i)(-1+i)+(9+2i)\cdot1.
+    \]
+    Таким образом, можно взять
+    \[
+        u=-1+i,\qquad v=1.
+    \]
+
+    \item Имеем
+    \[
+    \begin{aligned}
+        7-5i&=(3+8i)(-i)+(-1-2i),\\
+        3+8i&=(-1-2i)(-4)-1.
+    \end{aligned}
+    \]
+    Последний ненулевой остаток равен $-1$, то есть обратим. Поэтому
+    \[
+        \text{НОД}(3+8i,7-5i)=1
+    \]
+    с точностью до ассоциированности.
+\end{enumerate}
+
+\newpage
+
+\begin{defbox}{простое гауссово число}
+Ненулевое необратимое число $\pi\in\mathbb Z[i]$ называется
+\emph{простым гауссовым числом}, если из равенства
+\[
+    \pi=\alpha\beta
+\]
+следует, что хотя бы одно из чисел $\alpha,\beta$ обратимо.
+\end{defbox}
+
+\problem{6}{Докажите аналоги стандартных арифметических фактов.}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=8mm]
+    \item Наибольший общий делитель любых $\alpha,\beta\in\mathbb Z[i]$
+    можно представить в виде
+    \[
+        d=\alpha u+\beta v,
+        \qquad u,v\in\mathbb Z[i].
+    \]
+
+    \item Если $\text{НОД}(\alpha,\beta)=1$ и
+    \[
+        \alpha\mid\beta\gamma,
+    \]
+    то $\alpha\mid\gamma$.
+
+    \item Если $\pi$ — простое гауссово число и
+    \[
+        \pi\mid\alpha\beta,
+    \]
+    то $\pi\mid\alpha$ или $\pi\mid\beta$.
+
+    \item Докажите существование разложения любого ненулевого
+    необратимого гауссова числа в произведение простых.
+
+    \item Докажите единственность такого разложения с точностью до
+    порядка сомножителей и замены сомножителей ассоциированными.
+\end{enumerate}
+
+\smallskip
+\textbf{Решение.}
+
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=8mm]
+    \item В алгоритме Евклида каждый остаток является линейной
+    комбинацией двух предыдущих. Поэтому, последовательно выражая
+    остатки через предыдущие, последний ненулевой остаток $d$ получаем
+    в виде
+    \[
+        d=\alpha u+\beta v,
+        \qquad u,v\in\mathbb Z[i].
+    \]
+
+    \item Из пункта а) существуют $u,v\in\mathbb Z[i]$ такие, что
+    \[
+        \alpha u+\beta v=1.
+    \]
+    Умножим равенство на $\gamma$:
+    \[
+        \gamma=\alpha(\gamma u)+(\beta\gamma)v.
+    \]
+    Оба слагаемых справа делятся на $\alpha$: первое очевидно, а второе
+    по условию. Значит, $\alpha\mid\gamma$.
+
+    \item Предположим, что $\pi\nmid\alpha$. Любой общий делитель
+    $\pi$ и $\alpha$ делит простое число $\pi$, поэтому он либо обратим,
+    либо ассоциирован с $\pi$. Второй случай невозможен, иначе
+    $\pi\mid\alpha$. Следовательно,
+    \[
+        \text{НОД}(\pi,\alpha)=1.
+    \]
+    Из $\pi\mid\alpha\beta$ и пункта б) получаем $\pi\mid\beta$.
+
+    \item Проведём индукцию по $N(\alpha)$. Если $\alpha$ простое,
+    разложение уже найдено. Если нет, то
+    \[
+        \alpha=\beta\gamma,
+    \]
+    где $\beta$ и $\gamma$ необратимы. Поэтому
+    \[
+        1<N(\beta)<N(\alpha),
+        \qquad
+        1<N(\gamma)<N(\alpha).
+    \]
+    По предположению индукции оба множителя раскладываются на простые,
+    а значит, раскладывается и $\alpha$.
+
+    \item Пусть получены два разложения
+    \[
+        \pi_1\pi_2\dotsm\pi_r
+        =\rho_1\rho_2\dotsm\rho_s.
+    \]
+    Число $\pi_1$ делит правую часть, поэтому по пункту в) делит один
+    из множителей $\rho_j$. Так как $\rho_j$ простое, числа $\pi_1$ и
+    $\rho_j$ ассоциированы. Сократим их и повторим рассуждение.
+    В результате все простые множители двух разложений попарно
+    сопоставятся с точностью до ассоциированности; в частности,
+    $r=s$. Единственность доказана.
+\end{enumerate}
+
+\begin{factbox}{основная теорема арифметики в $\mathbb Z[i]$}
+Любое ненулевое гауссово число раскладывается в произведение простых
+гауссовых чисел. Такое разложение единственно с точностью до порядка
+сомножителей и умножения сомножителей на обратимые элементы.
+
+Этим фактом можно пользоваться во всех последующих задачах.
+\end{factbox}
+
+\begin{center}
+    {\large\bfseries III. Какие гауссовы числа являются простыми?}
+\end{center}
+
+\problem{7}{
+Докажите, что если $N(\alpha)$ является обычным простым числом,
+то $\alpha$ является простым гауссовым числом.
+}
+
+\smallskip
+\textbf{Решение.}
+Пусть $N(\alpha)=p$, где $p$~--- обычное простое число, и
+$\alpha=\beta\gamma$. Тогда
+\[
+    p=N(\alpha)=N(\beta)N(\gamma).
+\]
+Так как $N(\beta)$ и $N(\gamma)$ являются неотрицательными целыми
+числами, одно из них равно $1$. Соответствующий множитель обратим по
+задаче 2. Следовательно, $\alpha$ является простым гауссовым числом.
+
+\medskip
+
+\problem{8}{
+Пусть $p$ — обычное простое число вида $4k+3$. Докажите, что
+$p$ является простым числом и в кольце $\mathbb Z[i]$.
+}
+
+\textit{Указание.} Если $p=\alpha\beta$, рассмотрите возможные значения
+$N(\alpha)$ и $N(\beta)$ и вспомните остатки квадратов по модулю $4$.
+
+\smallskip
+\textbf{Решение.}
+Предположим, что $p=\alpha\beta$, причём оба множителя необратимы.
+После перехода к нормам получаем
+\[
+    p^2=N(p)=N(\alpha)N(\beta).
+\]
+Нормы обоих множителей больше $1$, поэтому из простоты $p$ следует
+\[
+    N(\alpha)=N(\beta)=p.
+\]
+Если $\alpha=a+bi$, то отсюда
+\[
+    p=a^2+b^2.
+\]
+Но квадрат целого числа сравним по модулю $4$ только с $0$ или $1$,
+поэтому сумма двух квадратов не может быть сравнима с $3$ по модулю
+$4$. Противоречие. Значит, в любом разложении $p=\alpha\beta$
+один из множителей обратим, то есть $p$ прост в $\mathbb Z[i]$.

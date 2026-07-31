@@ -1,0 +1,225 @@
+\centerline{\bf \Huge Обобщенные функции медленного роста.}
+
+
+\centerline{\bf \Huge Пространство $\mathcal{S}^{\prime}\left(\mathbb{R}^n\right)$}
+
+Обобщенной функцией медленного роста называется всякий линейный непрерывный функционал на пространстве основных функций $\mathcal{S}\left(\mathbb{R}^n\right)$. Через $\mathcal{S}^{\prime}\left(\mathbb{R}^n\right)$ обозначается множество всех обобщенных функций медленного роста. Из включения ( $\mathcal{D} \subset$ $\mathcal{S} \subset \mathcal{E})$, непрерывности и плотности каждого из этих вложений следует, что
+
+$$
+\mathcal{E}^{\prime} \subset \mathcal{S}^{\prime} \subset \mathcal{D}^{\prime}
+$$
+
+
+Напомним, что топология в $\mathcal{S}\left(\mathbb{R}^n\right)$ задается системой полунорм (на самом деле норм)
+
+$$
+p_N(\varphi)=\max _{|j| \leqslant N} \sup _{t \in \mathbb{R}^n}\left(1+|t|^2\right)^{\frac{N}{2}}\left|\varphi^{(j)}(t)\right|, \quad N=0,1, \ldots
+$$
+
+
+Тем самым $\mathcal{S}\left(\mathbb{R}^n\right)$ есть строгий проективный предел банаховых пространств $\mathcal{S}_N$ (пополнение $\mathcal{S}$ по норме $p_N$ )
+
+$$
+\mathcal{S} \subset \cdots \subset \mathcal{S}_{N+1} \subset \mathcal{S}_N \subset \cdots \subset \mathcal{S}_0
+$$
+
+
+Линейный функционал $f$ на $\mathcal{S}$ непрерывен тогда и только тогда, когда существуют числа $C$ и $N$ такие, что
+
+$$
+|(f, \varphi)| \leqslant C p_N(\varphi) \quad \forall \varphi \in \mathcal{S}\left(\mathbb{R}^n\right)
+$$
+
+Тем самым всякий линейный непрерывный на $\mathcal{S}$ функционал продолжается до линейного непрерывного функционала на некотором банаховом пространстве $\mathcal{S}_N$. Другими словами, каждый линейный непрерывный функционал в $\mathcal{S}$ имеет конечный порядок.
+
+Непрерывная функция $f(t)$ называется функцией медленного роста, 
+
+если $(1+|t|)^{-m}|f(t)|<c$ для некоторых $m$ и $c$. Если $f(t)-$ функция медленного роста, то она задает регулярный функционал $f \in \mathcal{S}^{\prime}$ по формуле $(f, \varphi)=\int f(t) \varphi(t) d t$.
+
+Мера $\mu$, заданная на $\mathbb{R}^n$, называется мерой медленного ро$c m a$, если для некоторого $m \geqslant 0$ выполняется неравенство $\int(1+$ $|t|)^{-m} \mu(d t)<\infty$. (Здесь мера $\mu$ предполагается борелевской мерой) Такая мера определяет обобщенную функцию медленного роста по формуле $(\mu, \varphi)=\int \varphi(t) \mu(d t)$.
+
+Если $f \in \mathcal{E}^{\prime}$, то $f \in \mathcal{S}^{\prime}$. При этом для любой $\varphi \in \mathcal{S}$ имеем $(f, \varphi)=(f, \eta \varphi)$, где $\eta \in \mathcal{D}$ и $\eta=1$ в окрестности носителя $f$.
+
+Некоторые операции в пространстве $\mathcal{S}^{\prime}$ Каждая линейная непрерывная операция над основными функциями (непрерывное линейное отображение $A: \mathcal{S} \mapsto \mathcal{S}$ ) определяет некоторую линейную непрерывную операцию $A^*: \mathcal{S}^{\prime} \mapsto \mathcal{S}^{\prime}$ над обобщенными функциями по формуле
+
+$$
+\left(A^*(f)(t), \varphi(t)\right)=(f(t), A(\varphi)(t)), \quad \varphi \in \mathcal{S}
+$$
+
+Напомним, что линейное отображение $A$ из $\mathcal{S}$ в $\mathcal{S}$ непрерывно тогда и только тогда, когда оно непрерывно по каждой полунорме $p_N$, то есть для любого $N$ найдутся $Q$ и $C_N$ такие, что $p_N(A(\varphi)) \leqslant$ $C_N p_Q(\varphi)$.
+
+1) Умножение на функцию. Умножение на бесконечно дифференцируемую функцию может вывести из $\mathcal{S}$ (например, $e^{-t^2} \in \mathcal{S}$, но $\left.e^{t^2} \cdot e^{-t^2}=1 \notin \mathcal{S}\right)$.
+
+Определение. Пусть функция $a(t) \in C^{\infty}\left(\mathbb{R}^n\right)$ растет на бесконечности вместе со всеми своими производными не быстрее полинома (своего для каждой производной):
+
+$$
+\left|D^j a(t)\right| \leqslant C_j(1+|t|)^{m_j}, \quad|j|=0,1, \ldots .
+$$
+
+
+Множество таких функций есть линейное пространство и называется пространством мультипликаторов для $\mathcal{S}$. Это пространство обозначается через $\Theta_M$.
+
+Пусть $a(t) \in \Theta_M$; тогда линейная операция $A: \varphi \in \mathcal{S} \mapsto$ $a(t) \varphi(t) \in \mathcal{S}$ непрерывна в $\mathcal{S}$. Следовательно, формула
+
+$$
+(a(t) f, \varphi)=(f(t), a(t) \varphi(t)), \quad \varphi \in \mathcal{S}
+$$
+
+
+корректно определяет умножение обобщенной функции на бесконечно дифференцируемую функцию из $\Theta_M$.
+
+2) Неособенная линейная замена переменных. Пусть $A$ - невырожденная $(n \times n)$-матрица и $b \in \mathbb{R}^n$. Отображение $\varphi(t) \mapsto$ $\frac{1}{|\operatorname{det} A|} \varphi\left(A^{-1}(t-b)\right)$ непрерывно из $\mathcal{S}$ в $\mathcal{S}$. Поэтому если $f(t) \in \mathcal{S}^{\prime}$, то естественно определить обобщенную функцию $f(A t+b)$ формулой
+
+$$
+(f(B t+b), \varphi(t))=\frac{1}{|\operatorname{det} A|}\left(f(t), \varphi\left(A^{-1}(t-b)\right)\right), \quad \varphi \in \mathcal{S}
+$$
+
+3) Операция дифференцирования. Операция $\varphi(t) \mapsto(-1)^{|j|} \times$ $D^j \varphi(t)$ непрерывна из $\mathcal{S}$ в $\mathcal{S}$. (Докажите). Поэтому если $f \in \mathcal{S}^{\prime}$, то формула
+
+$$
+\left(D^j f, \varphi\right)=(-1)^{|j|}\left(f, D^j \varphi\right), \quad \varphi \in \mathcal{S},
+$$
+
+
+корректно определяет обобщенную функцию из $\mathcal{S}^{\prime}$, которую естественно назвать производной $D^j$ обобщенной функции $f$.
+
+Отметим, что пространство $\mathcal{D}$ плотно в $\mathcal{S}$, то есть для любой $\varphi \in \mathcal{S}$ существует последовательность $\left\{\varphi_k \in \mathcal{D}\right\}$ такая, что $\varphi_k \rightarrow$ $\varphi$ в $\mathcal{S}$ при $k \rightarrow \infty$. (Эта последовательность может быть задана, например, формулой $\varphi_k(t)=\varphi(t) \eta\left(\frac{t}{k}\right)$, где $\eta \in \mathcal{D}$, причем $\eta(t)=1$, при $|t|<1$. Проверьте сами, что $\varphi_k \rightarrow \varphi$ в $\mathcal{S}$.)
+
+Последовательности обобщенных функций в пространстве $\mathcal{S}^{\prime}$ Пространство $\mathcal{S}$ есть пространство Фреше, поэтому оно бочечно и борнологично. Тем самым справедлива следующая теорема.
+
+Teоремa (о полноте $\mathcal{S}^{\prime}$ ). Если последовательность $f_k \in \mathcal{S}^{\prime}$ сходится в $\mathcal{S}^{\prime}$, то есть
+
+$$
+\left(f_k, \varphi\right) \underset{k \rightarrow \infty}{\longrightarrow} C_{\varphi} \quad \forall \varphi \in \mathcal{S},
+$$
+
+
+то $C_{\varphi}=(f, \varphi)$, где $f \in \mathcal{S}^{\prime}$.
+
+Следствие. Пусть $f_k \underset{k \rightarrow \infty}{\longrightarrow} f_0$ в $\mathcal{S}^{\prime} ;$ тогда $D^j f_k \underset{k \rightarrow \infty}{\longrightarrow} D^j f_0$ в $\mathcal{D}^{\prime}$.
+
+Teорема (Л. ШВАРЦА). Пусть $\left\{f_\alpha \in \mathcal{S}^{\prime}\left(\mathbb{R}^n\right), \alpha \in J\right\}$ - ограниченное множество функционалов медленного роста, то ecть
+
+$$
+\left|\left(f_\alpha, \varphi\right)\right| \leqslant C_{\varphi} \quad \forall f_\alpha, \quad \alpha \in J, \quad \varphi \in \mathcal{S}
+$$
+
+
+тогда существуют постояннье $C$ и $N$ такие, что
+
+$$
+\left|\left(f_\alpha, \varphi\right)\right| \leqslant C p_N(\varphi), \quad \alpha \in J, \quad \varphi \in \mathcal{S}
+$$
+
+
+Оказывается, что всякая сходящаяся в $\mathcal{S}^{\prime}$ последовательность обобщенных функций сходится также и в некотором $\mathcal{S}_N$.
+
+Teоpema. Пусть $f_k \in \mathcal{S}^{\prime}, k=1,2, \ldots, u$ для любой $\varphi \in \mathcal{S}$ последовательность $\left(f_k, \varphi\right) \rightarrow 0$ при $k \rightarrow \infty ;$ тогда существуют число $N$ и последовательность $\varepsilon_k \rightarrow 0$ такие, что
+
+$$
+\left|\left(f_k, \varphi\right)\right| \leqslant \varepsilon_k P_N(\varphi) \quad \forall \varphi \in \mathcal{S}\left(\mathbb{R}^n\right)
+$$
+
+
+Доказательство почти дословно повторяет доказательство соответствующей теоремы для пространства $\mathcal{D}^{\prime}$. При этом вместо теоремы о полноте $\mathcal{D}^{\prime}$ следует пользоваться теоремой о полноте $\mathcal{S}^{\prime}$.
+
+Замечание. Теорема останется справедливой, если последовательность $f_k$ заменить на произвольную направленность $f_\alpha$, $\alpha \in I$. Только нужно потребовать, чтобы для любой $\varphi \in \mathcal{S}$ имела место оценка $\left|\left(f_\alpha, \varphi\right)\right|<C_{\varphi}$ при $\alpha \in I$.
+
+Отметим, что если $I=[1,+\infty)$ и для $\forall \varphi \in \mathcal{S}$ функция $\left(f_\alpha, \varphi\right)$ непрерывна по $\alpha \in I$, то при условии существования предела $\left(f_\alpha, \varphi\right) \underset{\alpha \rightarrow \infty}{\longrightarrow} C_{\varphi}$ указанное выше условие выполняется автоматически.
+
+Следствие. Пусть $f_k \rightarrow f_0$ в $\mathcal{S}^{\prime}, a \varphi_k \rightarrow \varphi_0$ в $\mathcal{S}$ при $k \rightarrow \infty$; тогда
+
+$$
+\left(f_k, \varphi_k\right) \underset{k \rightarrow \infty}{\longrightarrow}\left(f_0, \varphi_0\right)
+$$
+
+
+Для обобщенных функций из $\mathcal{S}^{\prime}$ имеет место следующая структурная теорема.
+
+Теорема. Если $f \in \mathcal{S}^{\prime}\left(\mathbb{R}^n\right)$, то существуют непрерывная функция $g(t)$ медленного роста и мультииндекс $j$ такие, что $f(t)=D^j g(t)$.
+
+Пространство обобщенных функций $\mathcal{S}^{\prime}(F)$ Множество $\mathcal{G}$ называется регулярным, если существуют положительные числа $d, \omega, q$ такие, что любые две точки $t_1, t_2 \in \mathcal{G}$, расстояние между которыми $\left|t_1-t_2\right| \leqslant d$, могут быть соединены в $\mathcal{G}$ спрямляемой кривой длины $\ell \leqslant \omega\left|t_1-t_2\right|^q$.
+
+В частности, всякое выпуклое множество $\mathcal{G}$ регулярно (для него $d$ можно считать равным диаметру $\mathcal{G}$ и $\omega=q=1$ ). Множество, состоящее из конечного числа точек, регулярное.
+
+Пусть $F$ - замыкание регулярной области $\mathcal{G}: F=\overline{\mathcal{G}}$. Определим пространство основных функций $\mathcal{S}_F$ (быстро убывающих на $F$ ) как совокупность бесконечно дифференцируемых на $F$ функций (то есть бесконечно дифференцируемых на $\mathcal{G}$ и непрерывных вместе со всеми производными на $F$ ), для которых конечны все нормы
+
+$$
+\|\varphi\|_{N, F}=\sup _{\substack{t \in F \\|j| \leqslant N}}\left(1+t^2\right)^{N / 2}\left|D^j \varphi(t)\right|, \quad N=0,1, \ldots
+$$
+
+В $\mathcal{S}_F$ введем топологию проективного предела убывающей последовательности банаховых пространств
+
+$$
+\cdots \subset \mathcal{S}_{F, N+1} \subset \mathcal{S}_{N, F} \subset \cdots \subset \mathcal{S}_{1, F} \subset \mathcal{S}_{0, F}
+$$
+
+
+где $\mathcal{S}_{N, F}$ - пополнение $\mathcal{S}_F$ по $N$-й норме. Каждое вложение $\mathcal{S}_{N+1, F} \subset \mathcal{S}_{N, F}, N=0,1 \ldots$, непрерывно. Для любого $N$ существует $N^{\prime}>N$ такое, что вложение $\mathcal{S}_{N^{\prime}, F} \subset \mathcal{S}_{N, F}$ вполне непрерывно (компактно). Пространство $\mathcal{S}_F=\bigcap_{N \geqslant 0} \mathcal{S}_{N, F}$ - пространство Фреше, следовательно, бочечное и борнологичное. Пространство $\mathcal{S}_F^{\prime}$ определим как сопряженное пространство (пространство обобщенных функций медленного роста на $F$ ) к пространству $\mathcal{S}_F$. Каждая обобщенная функция $f$ из $\mathcal{S}_F^{\prime}$ имеет конечный порядок, то есть для некоторых $m$ и $C$
+
+$$
+|(f, \varphi)| \leqslant C\|\varphi\|_{m, F}, \quad \varphi \in \mathcal{S}_F
+$$
+
+Пусть $F$ - замкнутое регулярное множество. Обозначим через $\mathcal{S}^{\prime}(F)$ совокупность обобщенных функций из $\mathcal{S}^{\prime}$ с носителем в $F$.
+
+Утверждение. Пространства $\mathcal{S}^{\prime}(F)$ и $\mathcal{S}_F^{\prime}$ изоморфны. Это утверждение позволяет трактовать обобщенные функции с носителем на замкнутом регулярном множестве как обобщенные функции из $\mathcal{S}_F^{\prime}$.
+
+Для обобщенных функций из пространства $\mathcal{S}^{\prime}(F)$, если $F$ регулярное множество, структурная теорема уточняется следующим образом.
+
+Теорема (Владимиров В. С.). Пусть $f \in \mathcal{S}^{\prime}(F)$, где $F$ - регулярное множество. Тогда
+
+$$
+f=\sum_{|j| \leqslant N} D^j \mu_j(d t)
+$$
+
+
+где $\mu_j(d t)$ - меры степенного роста с носителями в $F$.
+
+Свертка обобщенных функций из $\mathcal{S}^{\prime}$ Пусть $f(x) \in \mathcal{S}^{\prime}$ и $g(x) \in \mathcal{S}^{\prime}$, и свертка $f * g$ существует в $\mathcal{D}^{\prime}$. Вопрос: Когда она принадлежит $\mathcal{S}^{\prime}$ ? Рассмотрим несколько случаев.
+
+1) Пусть $f \in \mathcal{S}^{\prime}$ и $g \in \mathcal{E}^{\prime}$. Тогда, как мы видели, $f * g$ существует, принадлежит $\mathcal{D}^{\prime}$ и представляется в виде
+
+$$
+(f * g, \varphi)=(g(y),(f(x), \varphi(x+y)))
+$$
+
+
+Так как $f \in \mathcal{S}^{\prime}$, то отображение $\varphi(x) \mapsto(f(x), \varphi(x+y))$ непрерывно из $\mathcal{S}$ в $\mathcal{E}$. Докажите. Поэтому формула корректно определяет $f * g$ как обобщенную функцию из $\mathcal{S}^{\prime}$. Тем самым свертка существует в $\mathcal{S}^{\prime}$.
+
+Отметим, что если $f_m \rightarrow f_0$ в $\mathcal{S}^{\prime}$ и $g_m \rightarrow g_0$ в $\mathcal{E}^{\prime}$, причем существует компакт $K$ такой, что $\operatorname{supp} g_m \subset K$ для всех $m$, то $f_m * g_m \xrightarrow[m \rightarrow \infty]{ } f_0 * g_0$.
+
+2) Пусть $\Gamma$ - замкнутый выпуклый острый конус в $\mathbb{R}^n$ с вершиной в нуле. Если $f$ и $g$ из $\mathcal{S}^{\prime}$ с носителями в $\Gamma$ (то есть $f, g \in \mathcal{S}^{\prime}(\Gamma)$ ), то свертка $f * g$, как мы видели, существует в $\mathcal{D}^{\prime}$ и представляется формулой
+
+$$
+(f * g, \varphi)=(f(x) \times g(y), \xi(x) \eta(y) \varphi(x+y)), \quad \varphi \in \mathcal{S}
+$$
+
+где $\xi$ и $\eta$ - любые $C^{\infty}$-функции, $\left|D^j \xi(x)\right| \leqslant c_j,\left|D^j \eta(y)\right| \leqslant c_j$, равные 1 в $(\operatorname{supp} f)^{\varepsilon}$ и $(\operatorname{supp} g)^{\varepsilon}$ и равные нулю вне $(\operatorname{supp} f)^{2 \varepsilon}$ и $(\operatorname{supp} g)^{2 \varepsilon}$ соответственно (см. (9.25)). Так как отображение $\varphi(x) \mapsto \xi(x) \eta(y) \varphi(x+y)$ непрерывно из $\mathcal{S}\left(\mathbb{R}^n\right)$ в $\mathcal{S}\left(\mathbb{R}^{2 n}\right)$ (докажите), то эта формула определяет $f * g$ как обобщенную функцию из $\mathcal{S}^{\prime}$ (даже из $\mathcal{S}^{\prime}(Г)$ ).
+
+Замечание. Так как $\Gamma$ - регулярное множество, то $f$ и $g$ есть линейные непрерывные функционалы на $\mathcal{S}_{\Gamma}$. Справедлива формула
+
+$$
+(f * g, \varphi)=(f(x),(g(y), \varphi(x+y)))=(g(y),(f(x), \varphi(x+y)))
+$$
+
+
+Эта формула имеет смысл, так как отображение $\varphi \mapsto(f(x), \varphi(x+$ $y)$ ) (как и аналогичное отображение $\varphi \mapsto(g(y), \varphi(x+y)))$ непрерывно из $\mathcal{S}_{\Gamma}$ в $\mathcal{S}_{\Gamma}$.
+
+Пусть $f_m, g_m \in \mathcal{S}^{\prime}(\Gamma)$, причем $f_m \rightarrow f_0$ и $g_m \rightarrow g_0$ при $m \rightarrow \infty$ в $\mathcal{S}^{\prime}$; тогда $f_m * g_m \rightarrow f_0 * g_0$ в $\mathcal{S}^{\prime}$.
+
+3) Пусть $f \in \mathcal{S}^{\prime}$ и $\varphi \in \mathcal{S}$; тогда свертка $f * \varphi$ существует в $\mathcal{S}^{\prime}$, даже принадлежит $\Theta_M$, и представляется формулой
+
+$$
+f * \varphi=(f(\xi), \varphi(t-\xi))
+$$
+
+
+$$
+\text { причем } \quad\left|D^j(f * \varphi)(t)\right| \leqslant C\left(1+t^2\right)^{N / 2} p_{N+|j|}(\varphi)
+$$
+
+
+с некоторыми $C$ и $N$.
+
+Пусть $\omega$ - <<шапочка>>, $\omega_m=m \omega(m x)$ и пусть $f \in \mathcal{S}^{\prime}$. Свертка $f * \omega_m \xrightarrow[m \rightarrow \infty]{ } f$ в $\mathcal{S}^{\prime}$. С другой стороны, $f * \omega_m \in \Theta_M$. Следовательно, $\Theta_M$ плотно в $\mathcal{S}^{\prime}$. Но всякая функция из $\Theta_M$ есть предел в $\mathcal{S}^{\prime}$ последовательности функций из $\mathcal{S}$ (даже из $\mathcal{D}$ ). Тем самым $\mathcal{S}$ (даже $\mathcal{D}$ ) плотно в $\mathcal{S}^{\prime}$.

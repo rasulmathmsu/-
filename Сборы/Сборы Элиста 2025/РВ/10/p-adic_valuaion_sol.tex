@@ -1,0 +1,154 @@
+\centerline{\bf \Huge Степень вхождения}
+
+\begin{flushright}
+        \scriptsize{Я чувствую себя пакетиком чая, который решили заварить\\ Аква из КоноСуба}
+\end{flushright}
+
+Пусть $p$ - простое число. Каждое целое ненулевое число $n$ можно единственным образом представить в виде $n=p^k m$, где $m$ не делится на $p$ (возможно, $k=0$ ). Число $k$ называется степенью вхождения простого $p$ в $n$. Обозначение: $k=\nu_p(n)$.
+
+\textbf{\large Свойства:}
+
+(a) $\nu_p(a b)=\nu_p(a)+\nu_p(b)$;
+
+(б) $\nu_p(a \pm b) \geqslant \min \left\{\nu_p(a), \nu_p(b)\right\}$, причём если $\nu_p(a) \neq \nu_p(b)$, то достигается равенство.
+
+\problem{0.1}
+Натуральные числа $a, b, c, d$ таковы, что $a b c, a b d, a c d, b c d$ - точные квадраты. Докажите, что $a, b, c, d$ - тоже точные квадраты.
+
+\problem{0.2}
+Натуральные числа $a$ и $b$ таковы, что сумма $\frac{a^2}{b}+\frac{b^2}{a}$ целая. Докажите, что оба слагаемых целые.
+
+\problem{1}
+Степень вхождения простого числа $p$ в натуральное $a$ равна $\alpha$, а степень вхождения $p$ в натуральное $b$ равна $\beta$. Докажите, что степень вхождения $p$ в НОД $(a, b)$ равна $\min (\alpha, \beta)$, а степень вхождения $p$ в $\operatorname{HOK}(a, b)$ равна $\max (\alpha, \beta)$.
+
+\textbf{Решение:}
+По определению НОД$(a,b)$ это наибольшее такое $d$, что оба числа $a$ и $b$ делятся на $d$. Тогда по свойству степеней вхождения для любого простого $p$ имеем:
+$$
+    \alpha = \nu_p a \geqslant \nu_p d
+$$
+$$
+    \beta = \nu_p b \geqslant \nu_p d
+$$
+
+А это значит, что $\nu_p d \leqslant \min(\alpha, \beta)$, а ввиду максимальности НОДа $\nu_p d = \min(\alpha, \beta)$
+
+Аналогично с НОКом.
+
+\problem{2}
+(a) \textbf{Формула Лежандра.} Докажите, что степень вхождения простого числа $p$ в $n!$ может быть вычислена по формуле
+
+$$
+\nu_p(n!)=\left[\frac{n}{p}\right]+\left[\frac{n}{p^2}\right]+\left[\frac{n}{p^3}\right]+\ldots
+$$
+
+(b)
+\textbf{Gasanov's Lemma.}
+Let $n$ be a natural number and $p$ be a prime greater than 2 , then $\nu_p(n!) \leq\left[\frac{n}{p-1}\right]$.
+
+(c)
+\textbf{Gasanov's Theorem.}
+Let $a_1, a_2, \ldots, a_k$ positive integers such that $a_1+a_2+\ldots+a_k=$ $k(p-1)$, where $p$ is prime number and $k>2$, then the product $a_{1}!\cdot a_{2}!\cdot \ldots \cdot a_{k}!$ will be an exact $k$-th power of a natural number if and only if
+
+$$
+a_1=a_2=\ldots=a_k=p-1
+$$
+
+\begin{flushright}
+        \scriptsize{за постулат Бертрана бан!}
+\end{flushright}
+
+\textbf{Решение:}
+
+(а) Покажем, что это выражение равно сумме степеней вхождения $p$ в каждое из чисел от 1 до $n$. Заметим, что слагаемое $\left[\frac{n}{p^\alpha}\right]$ равно количеству чисел, кратных $p^\alpha$ и не превосходящих $n$. Отсюда следует, что число со степенью вхождения $p$, равной $m$, было посчитано по 1 разу в каждом из слагаемых
+
+$$
+\left[\frac{n}{p}\right],\left[\frac{n}{p^2}\right], \ldots,\left[\frac{n}{p^m}\right]
+$$
+
+
+То есть оно было посчитано ровно $m$ раз. Получили требуемое.
+
+(b) According to Legendre's formula and the formula for the sum of an infinitely decreasing geometric progression:
+    
+\[\nu_p(n!) = \left[ \frac{n}{p} \right] + 
+                    \left[ \frac{n}{p^2} \right] +
+                    \ldots \leq
+                    \left[\frac{n}{p} + \frac{n}{p^2} + \ldots \right] = 
+                    \left[ \frac{n}{p-1} \right].\]
+
+(c) \textbf{Solution 1.} 
+Let's suppose the contrary. Suppose all the numbers are different; then there must be at least one number that is greater than the arithmetic mean of all the numbers. Let $a_i \geq \frac{k(p-1)}{k} + 1 = p.$ This means that the product $a_1! \cdot a_2! \cdot \ldots \cdot a_k!$ is divided by $p$. But since this number is the exact $k$-th power of the number, it is also divisible by $p^{k}$. Let's calculate the exponent of a prime number in the factorization of a product $a_1! \cdot a_2! \cdot \ldots \cdot a_k!$ using the lemma 1.1.   
+
+    \[\nu_p(a_1! \cdot a_2! \cdot \ldots \cdot a_k!) =
+    \nu_p(a_1!) + \nu_p(a_2!) + \ldots + \nu_p(a_k!) \] 
+    \[=\left[ \frac{a_1}{p-1} \right]+\left[ \frac{a_2}{p-1} \right] + \ldots +\left[ \frac{a_k}{p-1} \right]  \] 
+    \[\leq\frac{a_1}{p-1} + \frac{a_2}{p-1} + \ldots + \frac{a_k}{p-1} = \frac{k(p-1)}{p-1} = k.\]    
+
+
+    In this case, we get a double inequality  
+    \[k \leq \nu_p(a_1! \cdot a_2! \cdot \ldots \cdot a_k!) \leq k\] 
+    which means that $\nu_p(a_1! \cdot a_2! \cdot \ldots \cdot a_k!) = k$. This is possible if and only if all non-strict inequalities become equalities. 
+    
+    In particular
+    
+    \[\left[ \frac{a_i}{p-1} \right] = \frac{a}{p-1} \longrightarrow a_i \ \vdots \ p-1  \longrightarrow a_i \geq p-1 \longrightarrow \sum^{i=k}_{i=1} a_i \geq k(p-1),\]
+    but
+    \[\sum^{k}_{i=1} a_i = k(p-1)\]
+    from where we conclude that $a_1=a_2=\ldots=a_k=p-1.$
+
+\textbf{Solution 2.}
+We will prove by contradiction. Suppose that $p$ is the greatest prime divisor of the number $A$, but since $A$ is the $k$-th power it is divided by $p^{k}.$ Since \( k > 2 \), we can choose \( a_i \) and \( a_j \) in such a way that the exponent of \( p \) in their factorization will be different (if all exponents of occurrence are the same, then we simply consider the next prime number in magnitude) and since $k>2$ $max(\nu_p(a_i), \nu_p(a_j))\geq 2.$  Suppose that $\nu_p(a_i)\geq 2$.Then among the numbers $1, 2, \ldots, a_i$ there are at least two multiples of $p$. Consequently, according to Bertrand's postulate, there is a prime number $q$ between them, which is greater than $p$. Contradiction. Therefore, the exponents of the largest prime number in $a_i$ are always the same. Then we simply divide by the necessary power of $p$ in each number and repeat the same process until we cancel out all prime factors. We will obtain that all numbers are equal.
+
+\problem{3}
+Докажите, что число $1+\frac{1}{2}+\frac{1}{3}+\ldots+\frac{1}{n}$ не является целым ни при каком натуральном $n \geqslant 2$.
+
+\begin{flushright}
+        \scriptsize{тут тоже за постулат Бертрана бан!}
+\end{flushright}
+
+\textbf{Решение:}
+Рассмотрим наибольшую степень двойки от $1$ до $n$. Пусть это число $2^k$. Тогда заметим, что когда мы будем приводить нашу сумму к общему знаменателю, все дроби домножатся на какую-то степень двойки кроме дроби $\dfrac{1}{2^k}$. Стало быть в числителе будет сумма чётных чисел и одного нечётного, то есть в итоге нечётного число, а в знаменателе чётное. Стало быть дробь нецелая.
+
+\problem{4}
+Существует ли бесконечная арифметическая прогрессия с ненулевой разностью, состоящая только из степеней (выше первой!!!) натуральных чисел?
+
+\textbf{Решение:}
+Если натуральное число делится на некоторое простое число $p$, но не делится на $p^2$, то оно точно не является степенью выше первой. Попробуем найти такой член в прогрессии. Пусть $a_1$ - первый член, $d$ - разность. Возьмём простое число, на которое не делятся $a_1$ и $d$. Среди первых $p$ членов точно найдётся такой член $x$, который делится на $p$ (потому что эти члены дают попарно разные остатки при делении на $p$ ). Этот член является хотя бы второй степенью, значит, он делится и на $p^2$. Рассмотрим член $x+p d$. Ясно, что он делится на $p$, но не на $p^2$. То есть такой последовательности нет.
+
+\problem{5}
+Для натурального числа $n$ обозначим через $S_n$ наименьшее общее кратное всех чисел $1,2,3, \ldots, n$. Существует ли такое натуральное число $m$, что $S_{m+1}=4 S_m ?$
+
+\textbf{Решение:}
+Предположим, что такое $m$ существует. Пусть $S_{m+1}$ делится на $2^s$, но не делится на $2^{s+1}$. Тогда $s \geqslant 2$. Значит, среди чисел $1, \ldots, m+1$ есть число $a$ , делящееся на $2^s$. Но тогда число $a / 2$ делится на $2^{s-1}$, поэтому $S_m$ делится на $2^{s-1}$. Тогда, поскольку $S_{m+1}=4 S_m$, то $S_{m+1}$ делится на $2^{s+1}$, что неверно.
+
+\problem{6}
+По кругу стоят $10^{1000}$ натуральных чисел. Между каждыми двумя соседними числами записали их наименьшее общее кратное. Могут ли эти наименьшие общие кратные образовать $10^{1000}$ последовательных чисел (расположенных в каком-то порядке)?
+
+\textbf{Решение:}
+Пусть $n=10^{1000}$. Обозначим исходные числа (в порядке обхода) через $a_1, \ldots, a_n$; мы будем считать, что $a_{n+1}=a_1$. Положим $b_i=\operatorname{HOK}\left(a_i, a_{i+1}\right)$. Предположим что числа $b_1, \ldots, b_n$ - это $n$ подряд идущих натуральных чисел.
+Рассмотрим наибольшую степень двойки $2^m$, на которую делится хотя бы одно из чисел $a_i$. Заметим, что ни одно из чисел $b_1, \ldots, b_n$ не делится на $2^{m+1}$. Пусть для определённости $a_1 \vdots 2^m$; тогда $b_1 \vdots 2^m$ и $b_n \vdots 2^m$. Значит, $b_1=2^m x$ и $b_n=2^m y$ при некоторых нечётных $x$ и $y$. Без ограничения общности можно считать, что $x<y$. Тогда, поскольку $b_1, \ldots, b_n$ образуют $n$ последовательных чисел, среди них должно быть и число $2^m(x+1)$ (поскольку $2^m x<2^m(x+1)<2^m y$ ). Но это число делится на $2^{m+1}$ (так как $x+1$ четно), что невозможно. Противоречие.
+
+\problem{7}
+Петя выбрал несколько последовательных натуральных чисел и каждое записал либо красным, либо синим карандашом (оба цвета присутствуют). Может ли сумма наименьшего общего кратного всех красных чисел и наименьшего общего кратного всех синих чисел являться степенью двойки?
+
+\textbf{Решение:}
+Рассмотрим степени двойки, на которые делятся выписанные числа; пусть $2^k$ - наибольшая из них. Если хотя бы два выписанных числа делятся на $2^k$, то два соседних таких числа будут различаться на $2^k$. Значит, одно из них делится на $2^{k+1}$, что невозможно в силу выбора $k$. Следовательно, среди выписанных чисел ровно одно делится на $2^k$.
+Наименьшее общее кратное группы, содержащей это число, будет делиться на $2^k$, а НОК оставшейся группы - не будет. Значит, сумма этих НОК не делится на $2^k$; с другой стороны, эта сумма больше чем $2^k$. Поэтому эта суммане может быть степенью двойки.
+
+
+\problem{8}
+Докажите, что
+
+(a)
+$$
+\nu_p(C_n^k)>\nu_p(n)-\frac{k}{p-1}
+$$
+
+(б)
+\textbf{LTE-лемма.} Пусть $x$ и $y$ - различные ненулевые целые числа, $p$ - нечетное простое число, не являющееся делителем $x$ и $y$ и такое, что $p \mid x \pm y$. Тогда для любого натурального $n$ выполнено равенство
+
+$$
+\nu_p(x^n \pm y^n) = \nu_p(x \pm y)+\nu_p (n)
+$$
+
+\textbf{Решение:} Можно посмотреть в \href{https://math.mosolymp.ru/upload/files/method/2019/Bibikov-LTE.pdf}{брошюрке Бибикова} на страница 17-18.

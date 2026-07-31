@@ -1,0 +1,69 @@
+\documentclass[12pt]{amsart}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amstext}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage{ulem}
+\usepackage{enumitem}
+\setlist{nolistsep, itemsep=0.3cm,parsep=0pt}
+\setlength{\parskip}{0.3cm}
+
+\hypersetup
+{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+\textheight 25cm
+\renewcommand{\baselinestretch}{1.22}
+\voffset = -2,5cm \hoffset = -3cm \textwidth 190mm
+\sloppy
+\fussy
+
+\pagestyle{fancy}
+\fancyhf{} % Очищаем текущие настройки
+\cfoot{\thepage} % Устанавливаем номер страницы в центре снизу
+\fancyhead{}
+\fancyhead[LE, LO]{\Large \it 8В} 
+\fancyhead[CO,CE]{\large \it Элистинский Технический Лицей}
+\fancyhead[RE,RO]{\Large \it 03.09.2024} 
+\fancyfoot{}
+\fancypagestyle{firststyle} 
+{
+\fancyhead[LO]{\large \it 8В}
+\fancyhead[CO]{\Large \it Элистинский Технический Лицей}   
+\fancyhead[RO]{\Large \it 03.09.2024}
+\fancyfootoffset[R]{-12cm} %так можно регулировать ширину колонтитула
+\fancyfoot[L]{}
+\renewcommand{\footrulewidth}{0 mm} %толщина отделяющей полоски снизу
+\renewcommand{\headrulewidth}{0.1 mm} %толщина отделяющей полоски сверху
+\addtolength{\headheight}{5pt} % оставляем место для линейки
+}
+
+\newcommand{\problem}[2]{\noindent\llap{#1.\space}#2}
+
+\begin{document}
+
+\thispagestyle{firststyle}
+\large
+
+\input{ЭлМШ 2025-2026/III блок/8/3.1. HW_Algebra}
+
+\end{document}
+
+
+%\begin{wrapfigure}{r}{0.2\linewidth}
+    \vspace{-7mm}
+    \includegraphics[width=\linewidth]{}
+\end{wrapfigure}
+
+\begin{center}
+\includegraphics[width=0.2\textwidth]{}
+\end{center}2
